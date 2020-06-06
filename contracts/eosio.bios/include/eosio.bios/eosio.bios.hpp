@@ -234,7 +234,8 @@ namespace eosiobios {
           * @param schedule - New list of active producers to set
           */
          [[eosio::action]]
-         void setprods( const std::vector<eosio::producer_authority>& schedule );
+         //void setprods( const std::vector<eosio::producer_authority>& schedule );
+         void setprods( const std::vector<eosio::producer_key>& schedule );
 
          /**
           * Set params action, sets the blockchain parameters. By tuning these parameters, various degrees of customization can be achieved.

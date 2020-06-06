@@ -31,7 +31,8 @@ void bios::setalimits( name account, int64_t ram_bytes, int64_t net_weight, int6
    set_resource_limits( account, ram_bytes, net_weight, cpu_weight );
 }
 
-void bios::setprods( const std::vector<eosio::producer_authority>& schedule ) {
+//void bios::setprods( const std::vector<eosio::producer_authority>& schedule ) {
+void bios::setprods( const std::vector<eosio::producer_key>& schedule ) {
    require_auth( get_self() );
    set_proposed_producers( schedule );
 }
@@ -47,11 +48,11 @@ void bios::reqauth( name from ) {
 
 void bios::activate( const eosio::checksum256& feature_digest ) {
    require_auth( get_self() );
-   preactivate_feature( feature_digest );
+   //preactivate_feature( feature_digest );
 }
 
 void bios::reqactivated( const eosio::checksum256& feature_digest ) {
-   check( is_feature_activated( feature_digest ), "protocol feature is not activated" );
+   //check( is_feature_activated( feature_digest ), "protocol feature is not activated" );
 }
 
 }
